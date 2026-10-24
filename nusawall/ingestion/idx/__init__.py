@@ -1,0 +1,1 @@
+"""IDX data ingestion pipeline."""

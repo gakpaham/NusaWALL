@@ -1,0 +1,1 @@
+"""Text-derived market signals."""
