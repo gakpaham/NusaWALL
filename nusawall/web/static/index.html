@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c1117">
+    <meta name="description" content="Riset saham berbasis data historis dengan analitik lokal NusaWall.">
+    <title>NusaWall — Riset Pasar</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="NusaWall beranda">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>NUSAWALL</span>
+        </a>
+        <div class="system-status"><span class="status-dot"></span> MODEL LOKAL · BELAJAR ONLINE</div>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> RISET PASAR · INDONESIA</p>
+        <h1>Keputusan yang lebih baik<br><span>dimulai dari data.</span></h1>
+        <div class="intro-meta">
+          <p>Model prediksi internal belajar bertahap dari riwayat harga yfinance. Tanpa layanan AI atau unduhan model tambahan.</p>
+          <span class="edition">RESEARCH DESK<br>01 / NUSAWALL</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Analisis saham">
+        <form id="analysis-form" class="analysis-form">
+          <div class="form-heading">
+            <div>
+              <p class="section-index">01 — INSTRUMEN</p>
+              <h2>Analisis pasar</h2>
+              <p class="form-subtitle">Tentukan saham dan konteks riset.</p>
+            </div>
+            <span class="form-tag">BETA</span>
+          </div>
+
+          <label for="ticker">Kode saham</label>
+          <div class="ticker-row">
+            <input id="ticker" name="ticker" type="text" placeholder="BBCA.JK atau AAPL" maxlength="30" autocomplete="off" required>
+            <label class="visually-hidden" for="period">Rentang data</label>
+            <select id="period" name="period" aria-label="Rentang data">
+              <option value="1mo">1 bulan</option>
+              <option value="3mo">3 bulan</option>
+              <option value="6mo" selected>6 bulan</option>
+              <option value="1y">1 tahun</option>
+              <option value="2y">2 tahun</option>
+              <option value="5y">5 tahun</option>
+              <option value="10y">10 tahun</option>
+              <option value="max">Maksimum</option>
+            </select>
+          </div>
+
+          <label for="question">Fokus riset <span class="optional">— opsional</span></label>
+          <textarea id="question" name="question" rows="3" maxlength="2000">Tinjau tren harga, risiko yang terlihat, dan hal yang perlu dipantau.</textarea>
+
+          <button id="submit-button" type="submit">
+            <span class="button-label">Jalankan analisis</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="privacy-note"><span class="status-dot"></span> Perhitungan berjalan di perangkat ini. Data harga diambil dari Yahoo Finance.</p>
+        </form>
+
+        <aside class="method-panel" aria-label="Tentang metode analisis">
+          <p class="section-index">METODE / 01</p>
+          <h2>Angka yang bisa ditelusuri.</h2>
+          <p class="method-copy">Model lokal memperbarui bobot dari pasangan indikator dan return sesi berikutnya saat ada data baru.</p>
+          <div class="method-list">
+            <div><span class="method-code">A</span><span>Belajar online<br>return sesi berikutnya</span></div>
+            <div><span class="method-code">B</span><span>Sinyal harga<br>1, 5, dan 20 sesi</span></div>
+            <div><span class="method-code">C</span><span>Tren, volatilitas<br>&amp; penurunan</span></div>
+            <div><span class="method-code">D</span><span>Volume terbaru<br>vs. rata-rata 20 sesi</span></div>
+          </div>
+          <p class="method-footnote">Belajar diperbarui saat analisis diminta dan data harian tersedia. Bukan streaming real-time; tidak memakai berita atau fundamental.</p>
+        </aside>
+      </section>
+
+      <section id="result" class="result-card" aria-live="polite" hidden>
+        <div class="result-heading">
+          <div>
+            <p class="section-index">02 — HASIL RISET</p>
+            <h2 id="result-title"></h2>
+          </div>
+          <span id="result-engine" class="engine-badge"></span>
+        </div>
+        <p id="result-error" class="error-message" hidden></p>
+        <div id="result-answer" class="answer"></div>
+        <p class="disclaimer">Untuk riset dan edukasi, bukan saran investasi. Analisis bersifat historis dan tidak memprediksi kinerja masa depan.</p>
+      </section>
+
+      <section class="data-note" aria-label="Sumber dan cakupan data">
+        <span class="data-note-index">CAKUPAN DATA</span>
+        <p>Harga historis disediakan Yahoo Finance dan memerlukan koneksi internet. Hasil bukan rekomendasi beli atau jual.</p>
+        <span class="data-note-code">NW / 2026</span>
+      </section>
+
+      <footer>
+        <span>NUSAWALL <span id="year"></span></span>
+        <span>RISET INDEPENDEN · BUKAN NASIHAT KEUANGAN</span>
+      </footer>
+    </main>
+  </body>
+</html>
